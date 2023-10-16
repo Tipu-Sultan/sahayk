@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Website{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'teacher_list' %}">Teachers</a></li>
+            <li><a href="{% url 'student_list' %}">Students</a></li>
+            <li><a href="{% url 'teacher_students' %}">Find Student</a></li>
+            <li><a href="{% url 'student_teachers' %}">Find Teacher</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
